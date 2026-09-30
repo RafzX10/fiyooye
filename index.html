@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Kamu Hebat, Ka Fajar!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Caveat:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="petals"></div>
+<div class="glow-blob b1"></div>
+<div class="glow-blob b2"></div>
+<canvas id="fx"></canvas>
+<img src="img/rose-corner-grey.png" class="corner-rose cr-tl" alt="">
+<img src="img/rose-cluster-black.png" class="corner-rose cr-br" alt="">
+<img src="img/rose-swirl-red.png" class="corner-rose cr-tr" alt="">
+<img src="img/rose-corner-grey.png" class="corner-rose cr-bl" alt="">
+<img src="img/chibi-hug.png" class="chibi-peek" alt="">
+
+<nav id="nav" class="show">
+  <div class="nav-name">Untuk Ka Fajar🖤</div>
+  <div class="nav-links">
+    <a href="#hero">Beranda</a>
+    <a href="#chapters">Perjalanan</a>
+    <a href="#gallery">Galeri</a>
+    <a href="#letter">Surat</a>
+    <a href="#wishes">Setelah Ini</a>
+  </div>
+</nav>
+
+<button id="musicBtn" class="music-btn" aria-label="Putar musik">🎵</button>
+
+<div id="site">
+
+  <section id="hero" class="section">
+    <div class="eyebrow">Buat Ka Fajar, yang udah berjuang sampai akhir</div>
+    <img src="img/chibi-witch.png" class="hero-portrait" alt="">
+    <h1 class="hero-title">Semuanya Udah Selesai, <em>Kamu Hebat Banget</em></h1>
+    <p class="hero-body">
+      Aku tau kemarin-kemarin rasanya capek dan berat. Tapi kamu tetap jalan sampai garis akhir.
+      Gulir ke bawah ya, ada beberapa kata dari aku buat nemenin kamu narik napas lega.
+    </p>
+    <div class="hero-btns">
+      <button class="btn btn-primary" id="startBtn">Mulai (sambil nyalain musik)</button>
+      <button class="btn btn-ghost" onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">Langsung ke Suratnya</button>
+    </div>
+    <div class="scroll-cue"><span>⌄</span>Gulir ke bawah</div>
+  </section>
+
+  <section id="chapters" class="section">
+    <div class="eyebrow">Sebentar, tengok ke belakang dulu</div>
+    <h2 class="h2">Yang udah kamu <em>lewatin</em></h2>
+    <img src="img/rose-barbed-divider.png" class="divider-rose" alt="">
+    <p class="sub">Nggak semua orang kuat sampai ke sini. Kamu bisa, dan ini bukti kecilnya.</p>
+
+    <div class="timeline" id="timelineList">
+
+      <div class="t-item left">
+        <div class="t-dot">🌑</div>
+        <div class="t-card">
+          <div class="t-tag">Awalnya</div>
+          <div class="t-title">Semuanya Terasa Berat</div>
+          <div class="t-desc">Waktu semuanya numpuk dan bingung mulai dari mana, kamu tetap mulai pelan-pelan.</div>
+        </div>
+      </div>
+
+      <div class="t-item right">
+        <div class="t-dot">🥀</div>
+        <div class="t-card">
+          <div class="t-tag">Di Tengah Jalan</div>
+          <div class="t-title">Hampir Menyerah, Tapi Enggak</div>
+          <div class="t-desc">Ada hari-hari kamu pengen berhenti. Tapi kamu tetap lanjut, dan itu bukan hal kecil.</div>
+        </div>
+      </div>
+
+      <div class="t-item left">
+        <div class="t-dot">🌙</div>
+        <div class="t-card">
+          <div class="t-tag">Malam Panjang</div>
+          <div class="t-title">Capek yang Nggak Kelihatan</div>
+          <div class="t-desc">Overthinking, kurang tidur, ragu sama diri sendiri. Aku tau, dan kamu tetap bertahan.</div>
+        </div>
+      </div>
+
+      <div class="t-item right">
+        <div class="t-dot">🖤</div>
+        <div class="t-card">
+          <div class="t-tag">Selalu Ada</div>
+          <div class="t-title">Aku Nyemangatin dari Sini</div>
+          <div class="t-desc">Mungkin nggak selalu bisa bantu langsung, tapi aku selalu ada di pihak kamu.</div>
+        </div>
+      </div>
+
+      <div class="t-item left">
+        <div class="t-dot">🌹</div>
+        <div class="t-card">
+          <div class="t-tag">Hari Ini</div>
+          <div class="t-title">Akhirnya Selesai</div>
+          <div class="t-desc">Sekarang waktunya kamu tarik napas, istirahat, dan bangga sama diri sendiri.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="gallery" class="section">
+    <div class="eyebrow">Mekar satu per satu, khusus untukmu</div>
+    <h2 class="h2">Beberapa <em>potret favorit aku</em></h2>
+    <p class="sub">Ketuk setiap foto untuk melihatnya lebih dekat.</p>
+
+    <div class="polaroid-scroll" id="polaroidScroll">
+
+      <div class="polaroid">
+        <div class="polaroid-inner">
+          <div class="p-face p-front"><div class="cam">📷</div><div>Ketuk untuk melihat</div></div>
+          <div class="p-face p-back">
+            <div class="p-photo" style="background-image:url('foto/foto1.jpg')"></div>
+            <div class="p-caption">Awal Kenal</div>
+            <div class="p-quote">"Awal kenal Day 3 LDK banget nih yee (Baru notic ada si imut)."</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="polaroid">
+        <div class="polaroid-inner">
+          <div class="p-face p-front"><div class="cam">📷</div><div>Ketuk untuk melihat</div></div>
+          <div class="p-face p-back">
+            <div class="p-photo" style="background-image:url('foto/foto2.jpg')"></div>
+            <div class="p-caption">Paparazi</div>
+            <div class="p-quote">"Aduh di paparazi Fans deh."</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="polaroid">
+        <div class="polaroid-inner">
+          <div class="p-face p-front"><div class="cam">📷</div><div>Ketuk untuk melihat</div></div>
+          <div class="p-face p-back">
+            <div class="p-photo" style="background-image:url('foto/foto3.jpg')"></div>
+            <div class="p-caption">Photo Booth</div>
+            <div class="p-quote">"Eh Soon."</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="polaroid">
+        <div class="polaroid-inner">
+          <div class="p-face p-front"><div class="cam">📷</div><div>Ketuk untuk melihat</div></div>
+          <div class="p-face p-back">
+            <div class="p-photo" style="background-image:url('foto/foto4.jpg')"></div>
+            <div class="p-caption">Event Pertama</div>
+            <div class="p-quote">"(Soon)Jalanin event pertama bareng nih yee."</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="letter" class="section">
+    <div class="eyebrow">Sekuntum mawar hitam, khusus untukmu</div>
+    <h2 class="h2">Buka saat <em>udah selesai</em></h2>
+    <p class="sub" id="bottleHint">Ketuk mawarnya untuk membukanya</p>
+    <div class="bottle-wrap">
+      <img src="img/chibi-tophat-heart.png" class="letter-sticker" alt="">
+      <img src="img/rose-black.png" class="bottle" id="bottleSvg" alt="Mawar hitam">
+      <div class="letter-card" id="letterCard">
+        <div class="letter-greeting">Untuk Ka Fajar,</div>
+        <div class="letter-body">
+          Selamat ya, akhirnya semuanya selesai. Aku tau nggak gampang buat sampai sini: capeknya, ragunya,
+          malam-malam panjangnya. Tapi kamu tetap jalan dan nggak nyerah. Aku bangga banget sama kamu.
+          Sekarang kamu boleh istirahat, tarik napas panjang, dan kasih penghargaan buat diri sendiri.
+          Apa pun hasilnya nanti, usaha kamu udah nyata dan aku selalu ada di sisi kamu.
+          Makasih udah jadi pacar yang kuat, Ka Fajar. Sayang kamu.
+        </div>
+        <div class="letter-sign">— dari Rafka, selalu</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wishes" class="section">
+    <div class="eyebrow">Kalau udah selesai, boleh kan?</div>
+    <h2 class="h2">Buat kamu <em>setelah ini</em></h2>
+
+    <div class="wish-grid" id="wishGrid">
+      <div class="wish-card">
+        <div class="wish-emoji">😴</div>
+        <div class="wish-text">Istirahat yang cukup. Kamu udah layak tidur nyenyak tanpa mikirin apa-apa.</div>
+      </div>
+      <div class="wish-card">
+        <div class="wish-emoji">🖤</div>
+        <div class="wish-text">Bangga sama diri sendiri. Kamu udah ngelakuin yang terbaik.</div>
+      </div>
+      <div class="wish-card">
+        <div class="wish-emoji">🍰</div>
+        <div class="wish-text">Makan enak dan lakuin hal yang kamu suka, kamu pantas dapat hadiah kecil.</div>
+      </div>
+      <div class="wish-card">
+        <div class="wish-emoji">🌹</div>
+        <div class="wish-text">Ingat, kamu nggak sendirian. Ada aku yang selalu nyemangatin kamu.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="closing" class="section">
+    <div class="eyebrow">Hampir sampai di ujung</div>
+    <h2 class="h2">Kamu Hebat, <em>sungguh</em>.</h2>
+    <img src="img/chibi-thumbsup.png" class="closing-sticker" alt="">
+    <p class="closing-body">
+      Makasih udah berjuang sejauh ini. Apa pun yang kamu hadapi ke depannya, semangat terus ya.
+      Aku bakal selalu di sini buat dengerin, nemenin, dan nyemangatin kamu. Kamu keren, Pacar kesayangan aku!
+    </p>
+    <div class="wish-input-row">
+      <input class="wish-input" id="wishInput" placeholder="Tulis satu hal yang pengen kamu lakuin setelah ini...">
+      <button class="btn btn-primary" id="sendWishBtn">Kirim</button>
+    </div>
+    <div class="wish-sent" id="wishSent">🌹 Sudah terkirim. Nanti kita wujudin bareng ya.</div>
+    <a class="surface-link" href="#hero">↑ Kembali ke Atas</a>
+  </section>
+
+  <footer>Dibuat dengan penuh perhatian, untuk Ka Fajar · 2026</footer>
+</div>
+
+<audio id="bg-music" loop preload="auto">
+  <source src="musik/song.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
